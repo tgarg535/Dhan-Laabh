@@ -1,0 +1,17 @@
+data_ingestion:
+  tickers: ["AAPL", "MSFT", "GOOG", "AMZN", "TSLA", "META", "NFLX", "NVDA", "JPM", "V"]
+  interval: "1d"
+  test_size: 0.2
+
+lstm_model:
+  units: 128
+  dropout: 0.2
+  dense_units: 1
+  activation: "relu"
+  loss: "mean_squared_error"
+  optimizer: "adam"
+  batch_size: 32
+  epochs: 50
+  validation_split: 0.1
+
+

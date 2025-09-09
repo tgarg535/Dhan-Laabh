@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="max-w-6xl mx-auto py-8">
+    <!-- Header -->
+    <div class="mb-8">
+        <a href="/" class="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition duration-200 flex items-center gap-2 font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+            New Analysis
+        </a>
+    </div>
+
+    <!-- Page Title: Company Name + Symbol + Icon -->
+    <div class="mb-8">
+        <div class="flex items-center gap-x-4">
+            <img src="{{ url_for('static', filename='ticker_icons/' ~ (symbol|upper) ~ '.png') }}" 
+                 alt="{{ symbol | upper }} logo" 
+                 class="h-12 w-12 md:h-14 md:w-14 rounded-full object-contain bg-white dark:bg-gray-700 p-1 border border-gray-200 dark:border-gray-700"
+                 onerror="this.style.display='none'">
+            <div>
+                <div class="flex items-baseline gap-x-3">
+                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                        {{ company_name }}
+                    </h1>
+                    <p class="text-xl md:text-2xl font-medium text-gray-400 dark:text-gray-500">
+                        {{ symbol | upper }}
+                    </p>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 mt-1">Generated using AI models and real-time data.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Cards: Prediction & Sentiment -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- AI Prediction Card -->
+        <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6">
+            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">AI Price Prediction</h2>
+            {% if prediction.error %}
+                <p class="text-red-500 dark:text-red-400">{{ prediction.error }}</p>
+            {% else %}
+                <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ prediction.prediction }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Confidence: <span class="font-medium text-gray-700 dark:text-gray-300">{{ prediction.confidence }}</span></p>
+            {% endif %}
+        </div>
+
+        <!-- Sentiment Analysis Card -->
+        <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6">
+            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Market Sentiment</h2>
+            <div class="text-center">
+                {% if sentiment.overall_sentiment == 'Positive' %}
+                    <p class="text-3xl font-bold text-green-600 dark:text-green-400">Positive</p>
+                {% elif sentiment.overall_sentiment == 'Negative' %}
+                    <p class="text-3xl font-bold text-red-600 dark:text-red-500">Negative</p>
+                {% else %}
+                    <p class="text-3xl font-bold text-gray-500 dark:text-gray-400">Neutral</p>
+                {% endif %}
+                 <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Based on recent news analysis</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Historical Chart Section -->
+    <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 mb-8">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 sm:mb-0">Historical Performance</h2>
+            <div id="historical-chart-controls" class="flex items-center gap-1 bg-gray-100 dark:bg-gray-900/50 p-1 rounded-lg">
+                 <button data-period="5d" class="chart-btn">5D</button>
+                 <button data-period="1mo" class="chart-btn">1M</button>
+                 <button data-period="6mo" class="chart-btn">6M</button>
+                 <button data-period="ytd" class="chart-btn">YTD</button>
+                 <button data-period="1y" class="chart-btn active">1Y</button>
+                 <button data-period="5y" class="chart-btn">5Y</button>
+                 <button data-period="max" class="chart-btn">Max</button>
+            </div>
+        </div>
+        <div class="h-80">
+            <canvas id="historicalStockChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Prediction Chart Section -->
+    <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 mb-8">
+         <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Next 60 Days Price Prediction</h2>
+         <div class="h-80">
+            <canvas id="predictionStockChart"></canvas>
+         </div>
+    </div>
+    
+    <!-- News Section -->
+    <div class="mt-8">
+         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Latest News</h2>
+         <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- News articles will be loaded here by news-loader.js -->
+         </div>
+    </div>
+</div>
+
+<!-- This script passes the stock symbol from Flask to the JavaScript files -->
+<script>
+    window.stockSymbol = "{{ symbol | upper }}";
+</script>
+{% endblock %}
+

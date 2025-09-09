@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-white dark:bg-gray-900 overflow-hidden">
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight">
+            How It Works
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            From a single stock symbol to a comprehensive analysis, follow the journey of data through our platform to see how we generate your insights.
+        </p>
+    </div>
+    <!-- Background abstract shapes -->
+    <div class="absolute bottom-0 left-0 -z-0 transform translate-y-1/3 -translate-x-1/3">
+        <div class="w-96 h-96 bg-cyan-100 dark:bg-cyan-900/30 rounded-full filter blur-3xl opacity-50"></div>
+    </div>
+</section>
+
+<!-- Step-by-Step Process Section -->
+<section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800/40">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">A Four-Step Process</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">We've streamlined complex analysis into a simple, transparent workflow.</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+
+            <!-- Step 1: Input -->
+            <div class="flex items-start gap-6">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center h-16 w-16 rounded-full bg-cyan-600 text-white font-bold text-2xl border-4 border-white dark:border-gray-900 shadow-lg">
+                    1
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Enter a Stock Symbol</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Your journey begins on our home page. Simply enter the ticker symbol of any US-listed stock you're interested in and submit your query.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2: Data Aggregation -->
+            <div class="flex items-start gap-6">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center h-16 w-16 rounded-full bg-cyan-600 text-white font-bold text-2xl border-4 border-white dark:border-gray-900 shadow-lg">
+                    2
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Gathering Intelligence</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Our backend instantly gets to work, fetching real-time data from multiple sources including Google News for professional articles and Reddit for investor discussions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3: AI Analysis -->
+            <div class="flex items-start gap-6">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center h-16 w-16 rounded-full bg-cyan-600 text-white font-bold text-2xl border-4 border-white dark:border-gray-900 shadow-lg">
+                    3
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Dual-Channel Analysis</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        The gathered data is processed in two parallel streams: our trained machine learning models analyze quantitative data for a price prediction, while our sentiment analysis engine scores the qualitative text data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4: Visualization -->
+            <div class="flex items-start gap-6">
+                <div class="flex-shrink-0 flex flex-col items-center justify-center h-16 w-16 rounded-full bg-cyan-600 text-white font-bold text-2xl border-4 border-white dark:border-gray-900 shadow-lg">
+                    4
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Visualizing Insights</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        The final analysis is presented on your results page through interactive charts, clear prediction cards, and a live news feed, giving you a comprehensive overview of the stock.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-16 md:py-24 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center max-w-4xl">
+         <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Ready to Get Started?</h2>
+         <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+             Put our technology to the test. Get your own AI-powered stock analysis in seconds.
+         </p>
+         <div class="mt-8">
+            <a href="{{ url_for('index') }}"
+               class="inline-block bg-cyan-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900 focus:ring-cyan-500 transition duration-200 text-lg shadow-lg">
+                Analyze a Stock
+            </a>
+         </div>
+    </div>
+</section>
+
+{% endblock %}

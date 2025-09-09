@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-center pt-16 pb-12 md:pt-24 md:pb-20">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight">
+            Navigate the Market with <span class="text-cyan-600 dark:text-cyan-400">AI-Powered Insights</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Leverage advanced machine learning and real-time sentiment analysis to get a data-driven edge on your stock market decisions.
+        </p>
+    </div>
+
+    <!-- Prediction Form -->
+    <div class="mt-12 max-w-xl mx-auto">
+        <div class="bg-white dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg dark:shadow-2xl p-6 md:p-8 transform hover:scale-[1.02] transition-transform duration-300">
+            <form action="/predict" method="POST" id="stock-search-form">
+                <div class="relative" id="autocomplete-container">
+                    <label for="stock_symbol" class="sr-only">Enter Stock Symbol</label>
+                    <input type="text" id="stock_symbol" name="stock_symbol" required autocomplete="off"
+                           class="w-full px-5 py-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white text-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-200"
+                           placeholder="Search for a stock...">
+                    <div id="autocomplete-results" class="absolute top-full left-0 right-0 mt-1 z-50"></div>
+                </div>
+                
+                {% if error %}
+                    <p class="text-red-500 dark:text-red-400 text-sm mt-2 text-left">{{ error }}</p>
+                {% endif %}
+
+                <button type="submit"
+                        class="mt-4 w-full bg-cyan-600 text-white font-semibold py-4 px-5 rounded-lg hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-900 focus:ring-cyan-500 transition duration-200 text-lg shadow-lg">
+                    Analyze & Predict
+                </button>
+            </form>
+        </div>
+        <p class="text-xs text-gray-500 dark:text-gray-500 mt-4">For educational and informational purposes only.</p>
+    </div>
+</section>
+
+<!-- Market Snapshot Table Section -->
+<section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-left mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Market Snapshot</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-1">Live data for today's most popular stocks.</p>
+        </div>
+        <div class="overflow-x-auto bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-left">
+                <thead class="bg-gray-50 dark:bg-gray-800">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Stock</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Price</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Change</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Day's High</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Day's Low</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Volume</th>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider text-center">Link</th>
+                    </tr>
+                </thead>
+                <tbody id="market-snapshot-body" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <!-- JavaScript will insert live data here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 md:py-24">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Why Choose Our Platform?</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-2 max-w-2xl mx-auto">The ultimate toolkit for the modern investor, designed for clarity and precision.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <!-- Feature 1: AI Prediction -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl dark:hover:shadow-cyan-500/10">
+            <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+            <div class="relative z-10">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">AI-Powered Predictions</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">
+                    Our models analyze historical data to forecast potential stock price movements, providing you with a quantitative outlook.
+                </p>
+            </div>
+        </div>
+
+        <!-- Feature 2: Sentiment Analysis -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl dark:hover:shadow-cyan-500/10">
+            <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+            <div class="relative z-10">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="12" width="6" height="8" rx="1"/><path d="M17 12h5"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Real-Time Sentiment</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">
+                    We scrape and analyze the latest financial news to gauge market sentiment, helping you understand the "why" behind the numbers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Feature 3: Broad Coverage -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl dark:hover:shadow-cyan-500/10">
+            <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true"></div>
+            <div class="relative z-10">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Broad Market Coverage</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">
+                    Get insights on top-performing companies with specialized models and utilize our generalized model for thousands of other stocks.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom alert for validation, added back in to ensure JS functionality -->
+<div id="validation-alert">Please enter a valid stock symbol.</div>
+
+{% endblock %}

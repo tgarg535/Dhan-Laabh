@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="relative pt-16 pb-20 md:pt-24 md:pb-28 bg-white dark:bg-gray-900 overflow-hidden">
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight">
+            About DhanLaabh
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Empowering investors with the clarity of data and the wisdom of artificial intelligence. We're bridging the gap between complex market data and actionable insights.
+        </p>
+    </div>
+    <!-- Background abstract shapes -->
+    <div class="absolute top-0 right-0 -z-0 transform -translate-y-1/3 translate-x-1/3">
+        <div class="w-96 h-96 bg-cyan-100 dark:bg-cyan-900/30 rounded-full filter blur-3xl opacity-50"></div>
+    </div>
+</section>
+
+<!-- Our Mission Section -->
+<section class="relative py-24 md:py-32 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop');">
+    <!-- Semi-transparent overlay for readability -->
+    <div class="absolute inset-0 bg-gray-900/70 backdrop-blur-sm"></div>
+    
+    <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">Our Mission</h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-4 leading-relaxed">
+                The financial markets are complex and often intimidating. Our mission is to democratize financial analysis by providing retail investors with powerful tools that were once only accessible to large financial institutions. We believe that by combining quantitative AI predictions with real-time market sentiment, we can help you make more informed and confident investment decisions.
+            </p>
+            <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+                DhanLaabh is more than just a prediction tool; it's an educational platform designed to help you understand the forces that move the market.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Section -->
+<section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800/40">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">The Technology Behind Your Insights</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">We leverage a suite of modern technologies to deliver comprehensive analysis.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Feature 1: AI Prediction -->
+            <div class="group relative bg-white dark:bg-gray-800/50 p-8 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-cyan-500/20 hover:shadow-lg hover:-translate-y-2">
+                <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500 to-transparent opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div class="relative">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">AI-Powered Predictions</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        Our platform utilizes machine learning models trained on historical stock data to forecast potential future price movements.
+                    </p>
+                </div>
+            </div>
+            <!-- Feature 2: Sentiment Analysis -->
+            <div class="group relative bg-white dark:bg-gray-800/50 p-8 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-cyan-500/20 hover:shadow-lg hover:-translate-y-2">
+                <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500 to-transparent opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div class="relative">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect x="2" y="12" width="6" height="8" rx="1"/><path d="M17 12h5"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Market Sentiment Analysis</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        We scrape and analyze news articles and social media discussions in real-time to provide a qualitative measure of market sentiment.
+                    </p>
+                </div>
+            </div>
+            <!-- Feature 3: Data Aggregation -->
+            <div class="group relative bg-white dark:bg-gray-800/50 p-8 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-cyan-500/20 hover:shadow-lg hover:-translate-y-2">
+                <div class="absolute top-0 right-0 h-24 w-24 bg-gradient-to-bl from-cyan-500 to-transparent opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div class="relative">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-cyan-100 dark:bg-cyan-900/50 text-cyan-600 dark:text-cyan-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Live Market Data</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">
+                        All of our analyses are powered by up-to-the-minute market data, ensuring our insights are always relevant and timely.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disclaimer Section -->
+<section class="py-16 md:py-24 bg-gray-800 dark:bg-amber-50">
+    <div class="container mx-auto px-6 text-center max-w-4xl">
+         <h2 class="text-3xl font-bold text-white dark:text-gray-900">An Important Disclaimer</h2>
+         <div class="mt-6 text-gray-300 dark:text-gray-700 space-y-4 border-t-2 border-amber-500 pt-6">
+            <p>
+                DhanLaabh is an educational tool designed for informational purposes only. The predictions and analyses provided on this platform are generated by automated models and are not guaranteed to be accurate.
+            </p>
+            <p class="font-semibold text-gray-100 dark:text-gray-800">
+                This is not financial advice.
+            </p>
+            <p>
+                Investing in the stock market involves significant risk, including the possible loss of principal. Always conduct your own thorough research and consider consulting with a qualified financial advisor before making any investment decisions.
+            </p>
+         </div>
+    </div>
+</section>
+
+{% endblock %}

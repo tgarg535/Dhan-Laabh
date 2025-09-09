@@ -1,0 +1,26 @@
+# Core ML / Data
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+
+# Data Access
+yfinance
+requests
+
+# Deep Learning
+tensorflow==2.16.1
+
+
+# Experiment Tracking
+mlflow==2.14.1
+
+# Config & Utilities
+pyyaml==6.0.1
+python-dotenv==1.0.1
+loguru==0.7.2
+
+# Version Control for Data & Pipelines
+dvc==3.51.0
+
+# Local package install
+-e .
