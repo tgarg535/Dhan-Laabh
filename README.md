@@ -172,20 +172,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Data provided by various financial APIs
 - Special thanks to all contributors and maintainers
 
-<div align="center">
-  
-  <h2>Connect with Me</h2>
-  
-  [![GitHub](https://img.shields.io/badge/GitHub-tgarg535-181717?style=for-the-badge&logo=github)](https://github.com/tgarg535)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Now-ff69b4?style=for-the-badge&logo=aboutdotme)](https://github.com/tgarg535/My_Portfolio)
-  
-  ### My Projects
-  
-  [Climate Visibility Project](https://github.com/tgarg535/Climate-Visibility-Project) | 
-  [Movie Review Analysis](https://github.com/tgarg535/Movie-Review-Analysis) | 
-  [Dhan-Laabh](https://github.com/tgarg535/Dhan-Laabh)
-  
-</div>
+
 
 ---
 
