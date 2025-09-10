@@ -1,0 +1,64 @@
+stages:
+  data_ingestion:
+    cmd: python stock_prediction/data_ingestion.py
+    deps:
+      - stock_prediction/data_ingestion.py
+      - stock_prediction/constants.py
+      - stock_prediction/utils/main_utils.py
+      - logger.py
+      - exception.py
+      - params.yaml
+    outs:
+      - data/raw/stock_data
+      - data/raw/general_stock_data
+
+  data_preprocessing:
+    cmd: python stock_prediction/data_preprocessing.py
+    deps:
+      - stock_prediction/data_preprocessing.py
+      - stock_prediction/constants.py
+      - stock_prediction/utils/main_utils.py
+      - logger.py
+      - exception.py
+      - params.yaml
+      - data/raw/stock_data
+      - data/raw/general_stock_data
+    outs:
+      - data/interim/stock_data/train
+      - data/interim/stock_data/test
+      - data/interim/general_stock_data/train
+      - data/interim/general_stock_data/test
+      - flask_app/artifacts/scalers/stock_scalers
+      - flask_app/artifacts/scalers/general_stock_scalers
+
+  model_training:
+    cmd: python stock_prediction/model_training.py
+    deps:
+      - stock_prediction/model_training.py
+      - stock_prediction/constants.py
+      - stock_prediction/utils/main_utils.py
+      - logger.py
+      - exception.py
+      - params.yaml
+      - data/interim/stock_data/train
+      - data/interim/stock_data/test
+      - data/interim/general_stock_data/train
+      - data/interim/general_stock_data/test
+    outs:
+      - flask_app/artifacts/models/best_models
+      - flask_app/artifacts/models/final_models
+
+  model_evaluation:
+    cmd: python stock_prediction/model_evaluation.py
+    deps:
+      - stock_prediction/model_evaluation.py
+      - stock_prediction/constants.py
+      - stock_prediction/utils/main_utils.py
+      - logger.py
+      - exception.py
+      - params.yaml
+      - flask_app/artifacts/models/best_models
+      - data/interim/stock_data/test
+      - data/interim/general_stock_data/test
+    outs:
+      - flask_app/artifacts/model_eval
