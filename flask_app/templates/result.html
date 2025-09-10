@@ -30,6 +30,7 @@
         </div>
     </div>
 
+ 
     <!-- Top Cards: Prediction & Sentiment -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <!-- AI Prediction Card -->
@@ -39,9 +40,16 @@
                 <p class="text-red-500 dark:text-red-400">{{ prediction.error }}</p>
             {% else %}
                 <p class="text-4xl font-bold text-gray-900 dark:text-white">{{ prediction.prediction }}</p>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Confidence: <span class="font-medium text-gray-700 dark:text-gray-300">{{ prediction.confidence }}</span></p>
+                {% set conf_value = prediction.confidence.replace('%','')|float %}
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    Confidence: 
+                    <span class="font-medium {% if conf_value >= 50 %}text-green-600 dark:text-green-400{% else %}text-red-600 dark:text-red-500{% endif %}">
+                        {{ prediction.confidence }}
+                    </span>
+                </p>
             {% endif %}
         </div>
+
 
         <!-- Sentiment Analysis Card -->
         <div class="bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6">

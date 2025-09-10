@@ -58,7 +58,7 @@ def main():
         for ticker in tickers:
             logging.info(f"Evaluating model for {ticker}...")
             
-            model_path = f"./artifacts/models/best_models/best_model_{ticker}.h5"
+            model_path = f"./flask_app/artifacts/models/best_models/best_model_{ticker}.h5"
             test_data_path = f"./data/interim/stock_data/test/{ticker}_test_processed.pkl"
             
             if not os.path.exists(model_path) or not os.path.exists(test_data_path):
@@ -89,12 +89,12 @@ def main():
             predictions = model.predict(X_test)
             
             # Plot and save
-            plot_save_path = f"./artifacts/model_eval/evaluation_{ticker}.png"
+            plot_save_path = f"./flask_app/artifacts/model_eval/evaluation_{ticker}.png"
             plot_and_save(y_test, predictions, ticker, plot_save_path)
         
         # --- Evaluate and plot for generalized model ---
         logging.info("Evaluating generalized model...")
-        model_path_general = "./artifacts/models/best_models/best_model_general.h5"
+        model_path_general = "./flask_app/artifacts/models/best_models/best_model_general.h5"
         test_data_path_general = "./data/interim/general_stock_data/test/general_test_processed.pkl"
 
         if not os.path.exists(model_path_general) or not os.path.exists(test_data_path_general):
@@ -119,8 +119,8 @@ def main():
 
         X_test_general, y_test_general = reshape_for_lstm(test_data_general, sequence_length)
         predictions_general = model_general.predict(X_test_general)
-        
-        plot_save_path_general = "./artifacts/model_eval/evaluation_general.png"
+
+        plot_save_path_general = "./flask_app/artifacts/model_eval/evaluation_general.png"
         plot_and_save(y_test_general, predictions_general, "General", plot_save_path_general)
         
         logging.info("All models evaluated and plots saved.")
