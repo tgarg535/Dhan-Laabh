@@ -38,27 +38,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     const changeSign = stock.change >= 0 ? '+' : '';
 
                     const row = `
-                        <tr>
+                        <tr class="transition-all duration-200 hover:-translate-y-1 hover:shadow-xl bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 rounded-xl">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full object-cover" src="${stock.logo || 'https://placehold.co/40x40/e5e7eb/4b5563?text=?'}" alt="${stock.name} logo">
+                                    <div class="flex-shrink-0 h-12 w-12">
+                                        <img class="h-12 w-12 rounded-full object-cover border-2 border-cyan-400 dark:border-cyan-700 shadow" src="${stock.logo || 'https://placehold.co/40x40/e5e7eb/4b5563?text=?'}" alt="${stock.name} logo">
                                     </div>
                                     <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900 dark:text-white">${stock.name}</div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-400">${stock.symbol}</div>
+                                        <div class="text-base font-semibold text-gray-900 dark:text-white">${stock.name}</div>
+                                        <div class="text-xs font-mono text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/30 px-2 py-1 rounded">${stock.symbol}</div>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">$${price}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium ${changeColorClass}">
-                                ${changeSign}${change} (${changeSign}${changePercent}%)
+                            <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700 dark:text-gray-200 font-bold">$${price}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-base font-bold ${changeColorClass}">
+                                ${changeSign}${change} <span class="text-xs">(${changeSign}${changePercent}%)</span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">$${dayHigh}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">$${dayLow}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">${volume}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-center">
-                                <a href="${stock.website}" target="_blank" rel="noopener noreferrer" class="text-cyan-700 bg-cyan-100 hover:bg-cyan-200 dark:text-cyan-400 dark:bg-cyan-900/50 dark:hover:bg-cyan-900 text-xs font-semibold py-1 px-3 rounded-full transition-colors">
+                                <a href="${stock.website}" target="_blank" rel="noopener noreferrer"
+                                   class="text-cyan-700 bg-cyan-100 hover:bg-cyan-200 dark:text-cyan-400 dark:bg-cyan-900/50 dark:hover:bg-cyan-900 text-xs font-semibold py-1 px-3 rounded-full transition-colors shadow">
                                     Visit Site
                                 </a>
                             </td>

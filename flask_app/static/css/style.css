@@ -186,3 +186,11 @@
 .dark .autocomplete-symbol strong {
     color: #67e8f9; /* cyan-300 */
 }
+
+tr.row-hover-effect {
+  transition: all 0.2s;
+}
+tr.row-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
