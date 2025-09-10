@@ -167,10 +167,6 @@ git push origin feature/your-feature-name
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- Data provided by various financial APIs
-- Special thanks to all contributors and maintainers
 
 
 
