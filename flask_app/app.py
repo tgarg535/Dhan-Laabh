@@ -194,4 +194,4 @@ def get_news(symbol):
         return jsonify({"error": f"Failed to fetch news: {e}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
