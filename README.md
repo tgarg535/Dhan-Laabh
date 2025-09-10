@@ -1,7 +1,6 @@
 # 🚀 Dhan-Laabh - Stock Price Prediction Application
 
 <div align="center">
-  <img src="https://dhan-laabh.onrender.com/static/logo.png" alt="Dhan-Laabh Banner" width="800"/>
   <h3>
     <a href="https://dhan-laabh.onrender.com" target="_blank"><strong>💻 Live Demo</strong></a>
     <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
