@@ -1,9 +1,7 @@
 # 🚀 Dhan-Laabh - Stock Price Prediction Application
 
 <div align="center">
-  
-  ![Dhan-Laabh Banner](https://github.com/tgarg535/Dhan-Laabh/raw/main/flask_app/static/logo.png)
-  
+  ![Dhan-Laabh Banner](https://dhan-laabh.onrender.com/static/logo.png)
   <h3>
     <a href="https://dhan-laabh.onrender.com" target="_blank">💻 Live Demo</a>
     <span> | </span>
@@ -11,12 +9,10 @@
     <span> | </span>
     <a href="#features">✨ Features</a>
   </h3>
-  
   [![GitHub license](https://img.shields.io/github/license/tgarg535/Dhan-Laabh?color=blue)](LICENSE)
   [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
   [![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com/)
   [![DVC](https://img.shields.io/badge/DVC-Enabled-9cf.svg)](https://dvc.org/)
-  
 </div>
 
 ## 📊 Project Overview
