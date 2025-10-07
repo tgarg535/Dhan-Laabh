@@ -144,5 +144,5 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 <div align="center">
-  © 2023 Dhan-Laabh | Created with ❤️ by <a href="https://github.com/tgarg535">tgarg535</a>
+  © 2025 Dhan-Laabh | Created with ❤️ by <a href="https://github.com/tgarg535">tgarg535</a>
 </div>
