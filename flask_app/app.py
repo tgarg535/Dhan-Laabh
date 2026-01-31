@@ -22,17 +22,17 @@ NEWSDATA_API_KEY = os.getenv('NEWSDATA_API_KEY')  # Ensure
 TIME_STEP = 60  # Must match training
 
 STOCKS_INFO = {
-    "AAPL": {"name": "Apple Inc.", "logo": "https://logo.clearbit.com/apple.com", "website": "https://www.apple.com"},
-    "MSFT": {"name": "Microsoft Corp.", "logo": "https://logo.clearbit.com/microsoft.com", "website": "https://www.microsoft.com"},
-    "GOOG": {"name": "Alphabet Inc.", "logo": "https://logo.clearbit.com/abc.xyz", "website": "https://abc.xyz"},
-    "GOOGL": {"name": "Alphabet Inc.", "logo": "https://logo.clearbit.com/abc.xyz", "website": "https://abc.xyz"},
-    "AMZN": {"name": "Amazon.com, Inc.", "logo": "https://logo.clearbit.com/amazon.com", "website": "https://www.amazon.com"},
-    "TSLA": {"name": "Tesla, Inc.", "logo": "https://logo.clearbit.com/tesla.com", "website": "https://www.tesla.com"},
-    "META": {"name": "Meta Platforms, Inc.", "logo": "https://logo.clearbit.com/meta.com", "website": "https://www.meta.com"},
-    "NFLX": {"name": "Netflix, Inc.", "logo": "https://logo.clearbit.com/netflix.com", "website": "https://www.netflix.com"},
-    "NVDA": {"name": "NVIDIA Corp.", "logo": "https://logo.clearbit.com/nvidia.com", "website": "https://www.nvidia.com"},
-    "JPM": {"name": "JPMorgan Chase & Co.", "logo": "https://logo.clearbit.com/jpmorganchase.com", "website": "https://www.jpmorganchase.com"},
-    "V": {"name": "Visa Inc.", "logo": "https://logo.clearbit.com/visa.com", "website": "https://www.visa.com"}
+    "AAPL": {"name": "Apple Inc.", "logo": "https://img.logo.dev/ticker/AAPL?token=pk_YOUR_TOKEN", "website": "https://www.apple.com"},
+    "MSFT": {"name": "Microsoft Corp.", "logo": "https://img.logo.dev/ticker/MSFT?token=pk_YOUR_TOKEN", "website": "https://www.microsoft.com"},
+    "GOOG": {"name": "Alphabet Inc.", "logo": "https://img.logo.dev/ticker/GOOG?token=pk_YOUR_TOKEN", "website": "https://abc.xyz"},
+    "GOOGL": {"name": "Alphabet Inc.", "logo": "https://img.logo.dev/ticker/GOOGL?token=pk_YOUR_TOKEN", "website": "https://abc.xyz"},
+    "AMZN": {"name": "Amazon.com, Inc.", "logo": "https://img.logo.dev/ticker/AMZN?token=pk_YOUR_TOKEN", "website": "https://www.amazon.com"},
+    "TSLA": {"name": "Tesla, Inc.", "logo": "https://img.logo.dev/ticker/TSLA?token=pk_YOUR_TOKEN", "website": "https://www.tesla.com"},
+    "META": {"name": "Meta Platforms, Inc.", "logo": "https://img.logo.dev/ticker/META?token=pk_YOUR_TOKEN", "website": "https://www.meta.com"},
+    "NFLX": {"name": "Netflix, Inc.", "logo": "https://img.logo.dev/ticker/NFLX?token=pk_YOUR_TOKEN", "website": "https://www.netflix.com"},
+    "NVDA": {"name": "NVIDIA Corp.", "logo": "https://img.logo.dev/ticker/NVDA?token=pk_YOUR_TOKEN", "website": "https://www.nvidia.com"},
+    "JPM": {"name": "JPMorgan Chase & Co.", "logo": "https://img.logo.dev/ticker/JPM?token=pk_YOUR_TOKEN", "website": "https://www.jpmorganchase.com"},
+    "V": {"name": "Visa Inc.", "logo": "https://img.logo.dev/ticker/V?token=pk_YOUR_TOKEN", "website": "https://www.visa.com"}
 }
 
 # --- UTILITY CLASS ---
